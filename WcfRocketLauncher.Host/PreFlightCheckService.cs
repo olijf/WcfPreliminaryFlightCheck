@@ -2,7 +2,7 @@
 
 namespace WcfRocketLauncher.Host
 {
-    [ServiceBehavior(InstanceContextMode = InstanceContextMode.Single, ReleaseServiceInstanceOnTransactionComplete = false)]
+    [ServiceBehavior(InstanceContextMode = InstanceContextMode.PerSession)]
     public class PreFlightCheckService : IPreFlightCheck
     {
         IPreFlightCheckDuplexCallback callback = null;
@@ -15,15 +15,16 @@ namespace WcfRocketLauncher.Host
         public void StartPreFlightCheck()
         {
             rocket.AstronautControl = true;
-            callback.Done(rocket);
             System.Threading.Thread.Sleep(1000);
+            callback.Done(rocket);
             rocket.FlightControl = true;
+            System.Threading.Thread.Sleep(3000);
             callback.Done(rocket);
-            System.Threading.Thread.Sleep(6000);
             rocket.WeatherControl = true;
-            callback.Done(rocket);
             System.Threading.Thread.Sleep(2000);
+            callback.Done(rocket);
             rocket.FlightTrackingControl = true;
+            System.Threading.Thread.Sleep(500);
             callback.Done(rocket);
         }
     }

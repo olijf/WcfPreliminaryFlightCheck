@@ -3,8 +3,12 @@ using WcfRocketLauncher.Host;
 
 namespace WcfRocketLauncher.Client
 {
-    class PreFlightCheckClient : ClientBase<IPreFlightCheck>, IPreFlightCheck
+    class PreFlightCheckClient : DuplexClientBase<IPreFlightCheck>, IPreFlightCheck
     {
+        public PreFlightCheckClient(InstanceContext callbackInstance) : base(callbackInstance)
+        {
+        }
+
         public void StartPreFlightCheck()
         {
             Channel.StartPreFlightCheck();

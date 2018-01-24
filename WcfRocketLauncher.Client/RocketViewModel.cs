@@ -12,7 +12,7 @@ namespace WcfRocketLauncher.Client
         public RocketStatus FlightStatus
         {
             get { return _flightStatus; }
-            set { _flightStatus = value; }
+            set { _flightStatus = value; OnPropertyChanged(); }
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
