@@ -11,15 +11,25 @@ namespace WcfRocketLauncher.Host
     public class PreFlightCheckService : IPreFlightCheck
     {
         IPreFlightCheckDuplexCallback callback = null;
+        private RocketStatus rocket = new RocketStatus();
 
         public PreFlightCheckService()
         {
             callback = OperationContext.Current.GetCallbackChannel<IPreFlightCheckDuplexCallback>();
         }
-        private RocketStatus rocket = new RocketStatus();
         public void StartPreFlightCheck()
         {
-
+            rocket.AstronautControl = true;
+            callback.Done(rocket);
+            System.Threading.Thread.Sleep(1000);
+            rocket.FlightControl = true;
+            callback.Done(rocket);
+            System.Threading.Thread.Sleep(6000);
+            rocket.WeatherControl = true;
+            callback.Done(rocket);
+            System.Threading.Thread.Sleep(2000);
+            rocket.FlightTrackingControl = true;
+            callback.Done(rocket);
         }
     }
 }
