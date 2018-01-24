@@ -1,18 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
+﻿using System.Windows;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace WcfRocketLauncher.Client
 {
@@ -25,7 +12,7 @@ namespace WcfRocketLauncher.Client
         {
             InitializeComponent();
         }
-
+        /*
         private async void ComputeStuffAsync()
         {
             Red.Fill = new SolidColorBrush(Color.FromRgb(0xFF, 0x00, 0x00));
@@ -56,12 +43,17 @@ namespace WcfRocketLauncher.Client
             await Task.WhenAll(t);
             Green.Fill = new SolidColorBrush(Color.FromRgb(0x00, 0xFF, 0x00));
 
-        }
+        }*/
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             ResetAll();
-            ComputeStuffAsync();
+            GetDataOverWcf();
+        }
+
+        private void GetDataOverWcf()
+        {
+
         }
 
         private void ResetAll()
