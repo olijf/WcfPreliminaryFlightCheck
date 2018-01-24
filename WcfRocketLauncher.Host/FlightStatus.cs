@@ -3,48 +3,48 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Runtime.CompilerServices;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace WcfRocketLauncher.Client
 {
-    class RocketStatus : INotifyPropertyChanged
+    [DataContract]
+    class RocketStatus
     {
         private bool _weatherControl;
+
+        [DataMember]
         public bool WeatherControl
         {
             get { return _weatherControl; }
-            set { _weatherControl = value; OnPropertyChanged(); }
+            set { _weatherControl = value; }
         }
         private bool _flightControl;
 
+        [DataMember]
         public bool FlightControl
         {
             get { return _flightControl; }
-            set { _flightControl = value; OnPropertyChanged(); }
+            set { _flightControl = value; }
         }
 
         private bool _astronautControl;
 
+        [DataMember]
         public bool AstronautControl
         {
             get { return _astronautControl; }
-            set { _astronautControl = value; OnPropertyChanged(); }
+            set { _astronautControl = value; }
         }
 
         private bool _flightTrackingControl;
 
+        [DataMember]
         public bool FlightTrackingControl
         {
             get { return _flightTrackingControl; }
-            set { _flightTrackingControl = value; OnPropertyChanged(); }
-        }
-
-
-        public event PropertyChangedEventHandler PropertyChanged;
-        public virtual void OnPropertyChanged([CallerMemberName] string name = "")
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
+            set { _flightTrackingControl = value; }
         }
 
     }
