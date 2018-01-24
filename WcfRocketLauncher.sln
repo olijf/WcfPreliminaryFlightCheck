@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.27004.2002
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WcfRocketLauncher.Client", "WcfRocketLauncher.Client\WcfRocketLauncher.Client.csproj", "{55065C79-9AC0-4D5A-A94B-8DA6E20FFD0B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WcfRocketLauncher.Host", "WcfRocketLauncher.Host\WcfRocketLauncher.Host.csproj", "{29E21E94-FA2B-472F-8652-EF4694FD6B8B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{55065C79-9AC0-4D5A-A94B-8DA6E20FFD0B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{55065C79-9AC0-4D5A-A94B-8DA6E20FFD0B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{55065C79-9AC0-4D5A-A94B-8DA6E20FFD0B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{29E21E94-FA2B-472F-8652-EF4694FD6B8B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{29E21E94-FA2B-472F-8652-EF4694FD6B8B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{29E21E94-FA2B-472F-8652-EF4694FD6B8B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{29E21E94-FA2B-472F-8652-EF4694FD6B8B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
