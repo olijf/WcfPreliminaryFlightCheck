@@ -1,0 +1,42 @@
+﻿<Window x:Class="WcfRocketLauncher.Client.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WcfRocketLauncher.Client"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525"
+        xmlns:vm="clr-namespace:WcfRocketLauncher.Client">
+    <Window.DataContext>
+        <vm:RocketViewModel></vm:RocketViewModel>
+    </Window.DataContext>
+    <Grid>
+        <DockPanel LastChildFill="False">
+            <StackPanel Margin="5,5,5,5.4" Width="198" Orientation="Vertical" DockPanel.Dock="Left">
+                <StackPanel>
+                    <Label>Weather</Label>
+                    <CheckBox Name="Weather" Margin="0,0,0.4,0" HorizontalAlignment="Right" Width="198" IsChecked="{Binding FlightStatus.WeatherControl}" />
+                </StackPanel>
+                <StackPanel>
+                    <Label>Cosmonauts</Label>
+                    <CheckBox Name="Cosmonauts" Margin="0,0,0,0" IsChecked="{Binding FlightStatus.AstronautControl}" />
+                </StackPanel>
+                <StackPanel>
+                    <Label>Flightcontrol</Label>
+                    <CheckBox Name="Flightcontrol" Margin="0,0,0,0" IsChecked="{Binding FlightStatus.FlightControl}" />
+                </StackPanel>
+                <StackPanel>
+                    <Label>Flighttracking</Label>
+                    <CheckBox Name="Flighttracking" Margin="0,0,0,0" IsChecked="{Binding FlightStatus.FlightTrackingControl}" />
+                </StackPanel>
+            </StackPanel>
+            <StackPanel Margin="5" Width="101" Orientation="Vertical" DockPanel.Dock="Right">
+                <Ellipse Name="Red" Fill="#660A0A" Height="100" Stroke="Black"/>
+                <Ellipse Name="Orange" Fill="#66440A" Height="100" Stroke="Black"/>
+                <Ellipse Name="Green" Fill="#0A660A" Height="100" Stroke="Black"/>
+            </StackPanel>
+            <Button Content="Start Pre-flight check" VerticalAlignment="Center" Click="Button_Click"/>
+        </DockPanel>
+
+    </Grid>
+</Window>
