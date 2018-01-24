@@ -1,5 +1,7 @@
 ﻿using System.ComponentModel;
 using System.Runtime.CompilerServices;
+using WcfRocketLauncher.Host;
+
 
 namespace WcfRocketLauncher.Client
 {

@@ -7,10 +7,10 @@ using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WcfRocketLauncher.Client
+namespace WcfRocketLauncher.Host
 {
     [DataContract]
-    class RocketStatus
+    public class RocketStatus
     {
         private bool _weatherControl;
 
