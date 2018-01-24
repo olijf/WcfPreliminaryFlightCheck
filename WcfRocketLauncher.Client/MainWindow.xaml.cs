@@ -23,7 +23,9 @@ namespace WcfRocketLauncher.Client
             var counter = 0;
             foreach (var item in status.GetType().GetProperties())
             {
-                if ((item.GetValue(status) as bool?) == true)
+                bool b = false;
+                bool.TryParse(item.GetValue(status).ToString(), out b);
+                if (b)
                 {
                     counter++;
                 }
